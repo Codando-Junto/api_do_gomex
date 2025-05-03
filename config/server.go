@@ -7,7 +7,7 @@ import (
 
 func NewServer(mux *http.ServeMux) *http.Server {
 	return &http.Server{
-		Addr:         ":8080",
+		Addr:         ":9090",
 		Handler:      mux,
 		ReadTimeout:  10 * time.Second,
 		WriteTimeout: 10 * time.Second,
