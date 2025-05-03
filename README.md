@@ -27,13 +27,14 @@ Este projeto não possui dependências externas além da biblioteca padrão do G
 Para iniciar o servidor, execute o comando:
 
 ```bash
-go run main.go
+docker compose up --build
 ```
 
 Se tudo estiver configurado corretamente, você verá a seguinte mensagem no terminal:
 
 ```bash
-Server is running on :8080
+go_app_container    | Primeiro livro: Dom Casmurro, Autor: Machado de Assis
+go_app_container    | 2025/05/03 11:37:12 Server is running on :9090
 ```
 
 ### 3.1. Usando ngrok para expor a porta na internet
@@ -49,7 +50,7 @@ Você precisa se [cadastrar no ngrok](https://dashboard.ngrok.com/signup) e depo
 Você pode criar um domínio fixo pra você, para usar o mesmo domínio sempre [nesse link](https://dashboard.ngrok.com/domains) e nesse mesmo link você já pode pegar o link para iniciar o ngrok. Com meu domínio é assim:
 
 ```bash
-ngrok http --url=relieved-intimate-labrador.ngrok-free.app 8080
+ngrok http --url=relieved-intimate-labrador.ngrok-free.app 9090
 ```
 
 Com o comando acima o ngrok iniciará um tunel mandando tudo que ele receber nesse domínio na porta padrão http (80) e mandará tudo para sua porta 8080 na localhost.
